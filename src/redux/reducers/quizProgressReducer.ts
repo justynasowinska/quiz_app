@@ -2,7 +2,7 @@ import { QuizProgressType } from '../types';
 import { QuizProgressActionsType } from '../actions/progress';
 import { SET_NEXT_QUESTION, RESET_PROGRESS } from '../actions/types';
 
-const getInitialState = () => ({
+export const getInitialState = () => ({
     currentQuestion: 0
 });
 
