@@ -1,14 +1,9 @@
-/**
- * @format
- */
-
-import 'react-native';
+import { shallow } from 'enzyme';
 import React from 'react';
 import App from '../App';
 
-// Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
-
 it('renders correctly', () => {
-  renderer.create(<App />);
+    const component = shallow(<App />);
+
+    expect(component).toMatchSnapshot();
 });
