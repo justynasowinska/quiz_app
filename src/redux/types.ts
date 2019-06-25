@@ -11,7 +11,11 @@ export interface QuizQuestionType {
     incorrect_answers: Array<BooleanCorrectAnswerType>;
 }
 
-export type QuizQuestionsStateType = Array<QuizQuestionType>;
+export interface QuizQuestionsStateType {
+    questions: Array<QuizQuestionType>;
+    loading: boolean;
+    error: Error | null;
+}
 
 export interface QuizProgressType {
     currentQuestion: number;

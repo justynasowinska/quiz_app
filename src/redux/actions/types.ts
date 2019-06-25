@@ -1,5 +1,7 @@
-// questions
-export const UPDATE_QUESTIONS = 'update_questions';
+// fetch questions
+export const FETCH_QUESTIONS_BEGIN = 'fetch_questions_begin';
+export const FETCH_QUESTIONS_SUCCESS = 'fetch_questions_success';
+export const FETCH_QUESTIONS_FAILURE = 'fetch_questions_failure';
 
 // progress
 export const SET_NEXT_QUESTION = 'set_next_question';
