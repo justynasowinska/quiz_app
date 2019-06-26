@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Screen Header Component matches to the snapshot 1`] = `
+<Text
+  style={
+    Object {
+      "color": "#0C9198",
+      "fontSize": 26,
+      "fontWeight": "bold",
+      "textAlign": "center",
+    }
+  }
+>
+  Welcome to the
+  
+
+  Trivia Challenge!
+</Text>
+`;

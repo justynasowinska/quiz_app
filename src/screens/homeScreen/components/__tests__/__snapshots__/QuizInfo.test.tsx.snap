@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Screen Quiz Info Component matches to the snapshots 1`] = `
+<Text
+  style={
+    Object {
+      "color": "#474D54",
+      "fontSize": 18,
+      "textAlign": "center",
+    }
+  }
+>
+  You will be presented with 4 True or False questions
+  .
+</Text>
+`;
+
+exports[`Home Screen Quiz Info Component matches to the snapshots 2`] = `
+<Text
+  style={
+    Object {
+      "color": "#474D54",
+      "fontSize": 18,
+      "textAlign": "center",
+    }
+  }
+>
+  You will be presented with 54 Multiple questions
+  .
+</Text>
+`;

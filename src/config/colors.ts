@@ -4,7 +4,7 @@
 const NAMED_COLORS = {
     // light colors
     white: '#fff',
-    coral: '##F3F1F1',
+    coral: '#F3F1F1',
 
     // dark colors
     black: '#000',
