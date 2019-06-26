@@ -6,12 +6,18 @@ import { NavigationScreenProp } from 'react-navigation';
 import { THEME_COLORS } from '../../config/colors';
 import { Header } from './components/Header';
 import { QuizInfo } from './components/QuizInfo';
+import { fetchQuestions } from '../../redux/actions';
 
 interface PropTypes {
     navigation: NavigationScreenProp<any, any>;
+    fetchQuestions: () => void;
 }
 
 export class HomeScreen extends React.Component<PropTypes> {
+    componentDidMount() {
+        this.props.fetchQuestions();
+    }
+
     render() {
         return (
             <>
@@ -39,8 +45,8 @@ export class HomeScreen extends React.Component<PropTypes> {
     }
 }
 
-// TODO: check if connecting with redux will be necessary
-export const HomeScreenConnected = connect(null, null)(HomeScreen);
+// TODO: get data about questions number and type from redux
+export const HomeScreenConnected = connect(null, { fetchQuestions })(HomeScreen);
 
 const styles = StyleSheet.create({
     container: {

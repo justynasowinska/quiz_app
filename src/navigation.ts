@@ -11,7 +11,7 @@ export const AppNavigation = createSwitchNavigator(
         ResultsScreen: ResultsScreenConnected
     },
     {
-        initialRouteName: 'HomeScreen',
+        initialRouteName: 'QuizScreen',
         backBehavior: 'none'
     }
 );

@@ -10,6 +10,7 @@
     "prettier": "prettier --write '**/*.{js, ts, tsx}'"
   },
   "dependencies": {
+    "html-entities": "^1.2.1",
     "react": "16.8.3",
     "react-dom": "^16.8.6",
     "react-native": "0.59.9",
@@ -26,6 +27,7 @@
     "@babel/core": "^7.4.5",
     "@babel/runtime": "^7.4.5",
     "@types/enzyme": "^3.9.4",
+    "@types/html-entities": "^1.2.16",
     "@types/jest": "^24.0.15",
     "@types/react": "^16.8.22",
     "@types/react-dom": "^16.8.4",
