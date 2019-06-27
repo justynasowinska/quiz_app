@@ -9,9 +9,13 @@ import { QuizInfo } from './components/QuizInfo';
 import { fetchQuestions } from '../../redux/actions';
 import { QuizStatusBar } from '../../common/QuizStatusBar';
 import { PrimaryButton } from '../../common/PrimaryButton';
+import { AppStateType } from '../../redux/reducers/appStateType';
+import { QuestionType } from '../../redux/types';
 
 interface PropTypes {
     navigation: NavigationScreenProp<any, any>;
+    questionsNumber: number;
+    questionsType: QuestionType;
     fetchQuestions: () => void;
 }
 
@@ -21,6 +25,8 @@ export class HomeScreen extends React.Component<PropTypes> {
     }
 
     render() {
+        const { questionsNumber, questionsType } = this.props;
+
         return (
             <>
                 <QuizStatusBar />
@@ -28,8 +34,8 @@ export class HomeScreen extends React.Component<PropTypes> {
                     <View style={styles.contentContainer}>
                         <Header />
                         <QuizInfo
-                            questionsNumber={10}
-                            questionsType="boolean"
+                            questionsNumber={questionsNumber}
+                            questionsType={questionsType}
                         />
                         <Text style={styles.info}>Can you score 100%?</Text>
                         <PrimaryButton
@@ -47,8 +53,13 @@ export class HomeScreen extends React.Component<PropTypes> {
     }
 }
 
+const mapStateToProps = (state: AppStateType) => ({
+    questionsNumber: state.questions.questions.length,
+    questionsType: state.questions.questions[0].type // temporary solution
+});
+
 // TODO: get data about questions number and type from redux
-export const HomeScreenConnected = connect(null, { fetchQuestions })(HomeScreen);
+export const HomeScreenConnected = connect(mapStateToProps, { fetchQuestions })(HomeScreen);
 
 const styles = StyleSheet.create({
     container: {
