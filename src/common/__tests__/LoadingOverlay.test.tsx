@@ -8,5 +8,8 @@ describe('LoadingOverlay Component', () => {
         const component = shallow(<LoadingOverlay backgroundColor="#000" />);
 
         expect(component).toMatchSnapshot();
+
+        component.setProps({ size: 'large' });
+        expect(component).toMatchSnapshot();
     });
 });

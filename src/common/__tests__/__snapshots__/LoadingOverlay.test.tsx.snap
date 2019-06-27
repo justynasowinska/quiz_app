@@ -31,3 +31,35 @@ exports[`LoadingOverlay Component matches to the snapshot 1`] = `
   />
 </View>
 `;
+
+exports[`LoadingOverlay Component matches to the snapshot 2`] = `
+<View
+  style={
+    Array [
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      },
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+        "padding": 20,
+      },
+      Object {
+        "backgroundColor": "#000",
+      },
+    ]
+  }
+>
+  <ActivityIndicator
+    animating={true}
+    color="#474D54"
+    hidesWhenStopped={true}
+    size="large"
+  />
+</View>
+`;

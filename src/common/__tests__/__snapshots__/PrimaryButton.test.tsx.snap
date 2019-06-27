@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PrimaryButton Component matches to the snapshot 1`] = `
+<ForwardRef(Themed.Button)
+  buttonStyle={
+    Object {
+      "paddingBottom": 10,
+      "paddingLeft": 20,
+      "paddingRight": 20,
+      "paddingTop": 10,
+    }
+  }
+  onPress={[MockFunction]}
+  title="SOME TITLE"
+/>
+`;
