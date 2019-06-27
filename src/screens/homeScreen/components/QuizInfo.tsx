@@ -3,6 +3,7 @@ import { Text, StyleSheet } from 'react-native';
 
 import { THEME_COLORS } from '../../../config/colors';
 import { QuestionType } from '../../../redux/types';
+import { moderateScale } from '../../../utils/scale';
 
 interface PropsType {
     questionsNumber: number;
@@ -31,7 +32,7 @@ export const QuizInfo = (props: PropsType) => {
 
 const styles = StyleSheet.create({
     info: {
-        fontSize: 18,
+        fontSize: moderateScale({ size: 25 }),
         color: THEME_COLORS.appTextColor,
         textAlign: 'center'
     },

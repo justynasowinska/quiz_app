@@ -3,6 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { Icon } from 'react-native-elements';
 
 import { THEME_COLORS } from '../../../config/colors';
+import { verticalScale, moderateScale } from '../../../utils/scale';
 
 export const BooleanAnswersInstruction = () => {
     return (
@@ -11,20 +12,20 @@ export const BooleanAnswersInstruction = () => {
             <Icon
                 name="arrow-long-left"
                 type="entypo"
-                size={20}
+                size={moderateScale({ size: 20 })}
                 iconStyle={styles.arrowIconLeft}
             />
             <Icon
                 name="gesture-swipe-horizontal"
                 type="material-community"
-                size={40}
+                size={moderateScale({ size: 40 })}
                 color={THEME_COLORS.appTextColor}
                 iconStyle={styles.iconStyle}
             />
             <Icon
                 name="arrow-long-right"
                 type="entypo"
-                size={20}
+                size={moderateScale({ size: 20 })}
                 iconStyle={styles.arrowIconRight}
             />
             <Text style={styles.answer}>TRUE</Text>
@@ -36,22 +37,22 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginBottom: 40,
-        marginTop: -40
+        marginBottom: verticalScale({ size: 25 }),
+        marginTop: verticalScale({ size: -25 })
     },
     answer: {
-        fontSize: 20,
+        fontSize: moderateScale({ size: 20 }),
         color: THEME_COLORS.appTextColor,
         fontWeight: 'bold'
     },
     iconStyle: {
-        marginLeft: 15,
-        marginRight: 15
+        marginLeft: moderateScale({ size: 15 }),
+        marginRight: moderateScale({ size: 15 })
     },
     arrowIconLeft: {
-        marginLeft: 15
+        marginLeft: moderateScale({ size: 15 })
     },
     arrowIconRight: {
-        marginRight: 15
+        marginRight: moderateScale({ size: 15 })
     }
 });

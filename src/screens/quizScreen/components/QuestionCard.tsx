@@ -4,6 +4,7 @@ import { View, StyleSheet, Text } from 'react-native';
 import { THEME_COLORS } from '../../../config/colors';
 import { QuizQuestionType } from '../../../redux/types';
 import { decodeWithEntities, getDifficultyLevelColor } from '../../../utils/helpers';
+import { moderateScale } from '../../../utils/scale';
 
 interface PropTypes {
     question: QuizQuestionType;
@@ -30,10 +31,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: THEME_COLORS.white,
         borderWidth: 1,
-        padding: 20
+        padding: moderateScale({ size: 23 })
     },
     questionText: {
-        fontSize: 20,
+        fontSize: moderateScale({ size: 23 }),
         color: THEME_COLORS.appTextColor,
         textAlign: 'center'
     }

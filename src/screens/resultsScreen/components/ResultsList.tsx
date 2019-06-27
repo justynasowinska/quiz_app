@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { FlatList, View, StyleSheet, ListRenderItemInfo } from 'react-native';
 import { ResultType, ResultsListItem } from './ResultsListItem';
+import { verticalScale } from '../../../utils/scale';
 
 export type ResultsType = ReadonlyArray<ResultType>;
 
@@ -36,7 +37,7 @@ export const ResultsList = (props: PropsType) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginTop: 20,
-        marginBottom: 20
+        marginTop: verticalScale({ size: 20 }),
+        marginBottom: verticalScale({ size: 20 })
     }
 });

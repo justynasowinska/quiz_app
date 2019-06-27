@@ -12,6 +12,7 @@ import { PrimaryButton } from '../../common/PrimaryButton';
 import { AppStateType } from '../../redux/reducers/appStateType';
 import { QuizQuestionsStateType } from '../../redux/types';
 import { LoadingOverlay } from '../../common/LoadingOverlay';
+import { verticalScale, moderateScale } from '../../utils/scale';
 
 interface PropTypes {
     navigation: NavigationScreenProp<any, any>;
@@ -53,11 +54,11 @@ export class HomeScreen extends React.Component<PropTypes> {
         }
 
         if (questions.error !== null) {
-            return <Text>Error during fetching questions.</Text>;
+            return <Text style={[styles.info, styles.error]}>Error during fetching questions.</Text>;
         }
 
         if (questions.questions.length === 0) {
-            return <Text>There is no available questions for these criteria.</Text>;
+            return <Text style={styles.info}>There is no available questions for these criteria.</Text>;
         }
 
         return this.renderIntro();
@@ -104,14 +105,17 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingTop: 30,
-        paddingBottom: 30,
-        paddingLeft: 40,
-        paddingRight: 40,
+        paddingTop: verticalScale({ size: 30 }),
+        paddingBottom: verticalScale({ size: 30 }),
+        paddingLeft: moderateScale({ size: 40 }),
+        paddingRight: moderateScale({ size: 40 }),
     },
     info: {
-        fontSize: 18,
+        fontSize: moderateScale({ size: 25 }),
         color: THEME_COLORS.appTextColor,
         textAlign: 'center'
     },
+    error: {
+        color: THEME_COLORS.red
+    }
 });

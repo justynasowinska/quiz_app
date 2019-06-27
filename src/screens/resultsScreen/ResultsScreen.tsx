@@ -10,6 +10,7 @@ import { fetchQuestions, resetUserAnswers } from '../../redux/actions';
 import { ResultsSummaryType, ResultsHeader } from './components/ResultsHeader';
 import { ResultsList, ResultsType } from './components/ResultsList';
 import { PrimaryButton } from '../../common/PrimaryButton';
+import { verticalScale, moderateScale } from '../../utils/scale';
 
 interface PropsType {
     navigation: NavigationScreenProp<any, any>;
@@ -96,6 +97,9 @@ const styles = StyleSheet.create({
     contentContainer: {
         flex: 1,
         alignItems: 'center',
-        padding: 30
+        paddingTop: verticalScale({ size: 30 }),
+        paddingBottom: verticalScale({ size: 30 }),
+        paddingLeft: moderateScale({ size: 30 }),
+        paddingRight: moderateScale({ size: 30 }),
     }
 });

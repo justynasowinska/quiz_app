@@ -9,6 +9,7 @@ import { QuizQuestionsStateType, QuizProgressType, BooleanCorrectAnswerType } fr
 import { fetchQuestions, addUserAnswer, getNewQuestion, resetProgress } from '../../redux/actions';
 import { QuestionsContainer } from './components/QuestionsContainer';
 import { QuizStatusBar } from '../../common/QuizStatusBar';
+import { verticalScale, moderateScale } from '../../utils/scale';
 
 interface PropTypes {
     navigation: NavigationScreenProp<any, any>;
@@ -80,9 +81,9 @@ const styles = StyleSheet.create({
     contentContainer: {
         flex: 1,
         alignItems: 'center',
-        paddingTop: 30,
-        paddingBottom: 30,
-        paddingLeft: 40,
-        paddingRight: 40,
+        paddingTop: verticalScale({ size: 30 }),
+        paddingBottom: verticalScale({ size: 30 }),
+        paddingLeft: moderateScale({ size: 40 }),
+        paddingRight: moderateScale({ size: 40 })
     }
 });

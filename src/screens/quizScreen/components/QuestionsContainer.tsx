@@ -5,6 +5,7 @@ import { BooleanQuestionsDeck } from './BooleanQuestionsDeck';
 import { QuizQuestionType, BooleanCorrectAnswerType } from '../../../redux/types';
 import { getDifficultyLevelColor } from '../../../utils/helpers';
 import { BooleanAnswersInstruction } from './BooleanAnswersInstruction';
+import { moderateScale } from '../../../utils/scale';
 
 interface PropsType {
     questions: ReadonlyArray<QuizQuestionType>;
@@ -49,12 +50,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     levelText: {
-        fontSize: 15,
-        marginBottom: 2,
+        fontSize: moderateScale({ size: 18 }),
+        marginBottom: moderateScale({ size: 4 }),
         alignSelf: 'flex-start'
     },
     progressText: {
-        fontSize: 15,
-        marginTop: 2
+        fontSize: moderateScale({ size: 18 }),
+        marginTop: moderateScale({ size: 4 })
     }
 });

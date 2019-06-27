@@ -5,6 +5,7 @@ import { Icon } from 'react-native-elements';
 import { THEME_COLORS } from '../../../config/colors';
 import { decodeWithEntities } from '../../../utils/helpers';
 import { setTestID } from '../../../utils/TestingUtils';
+import { verticalScale, moderateScale } from '../../../utils/scale';
 
 export interface ResultType {
     questionId: number;
@@ -25,6 +26,7 @@ export const ResultsListItem = (props: PropsType) => {
                     name="check"
                     color={THEME_COLORS.green}
                     iconStyle={styles.iconStyle}
+                    size={moderateScale({ size: 26 })}
                 />
             );
         }
@@ -34,6 +36,7 @@ export const ResultsListItem = (props: PropsType) => {
                 name="close"
                 color={THEME_COLORS.red}
                 iconStyle={styles.iconStyle}
+                size={moderateScale({ size: 26 })}
             />
         );
     }
@@ -53,8 +56,8 @@ export const ResultsListItem = (props: PropsType) => {
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        marginTop: 10,
-        marginBottom: 10,
+        marginTop: verticalScale({ size: 12 }),
+        marginBottom: verticalScale({ size: 12 }),
         alignItems: 'center',
     },
     textContainer: {
@@ -62,14 +65,14 @@ const styles = StyleSheet.create({
         flexShrink: 1,
     },
     questionText: {
-        fontSize: 20,
+        fontSize: moderateScale({ size: 22 }),
         color: THEME_COLORS.appTextColor
     },
     correctAnswer: {
-        fontSize: 15,
+        fontSize: moderateScale({ size: 18 }),
         color: THEME_COLORS.green
     },
     iconStyle: {
-        marginRight: 10
+        marginRight: moderateScale({ size: 12 })
     }
 });

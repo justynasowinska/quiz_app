@@ -6,6 +6,7 @@ import { QuestionCard } from './QuestionCard';
 import { SWIPE_THRESHOLD, SWIPE_OUT_DURATION, ROTATE_CARD_DEG } from '../../../config/constants';
 import { SCREEN_WIDTH } from '../../../utils/metrics';
 import { THEME_COLORS } from '../../../config/colors';
+import { verticalScale, moderateScale } from '../../../utils/scale';
 
 interface PropsType {
     questions: ReadonlyArray<QuizQuestionType>;
@@ -161,24 +162,27 @@ const styles = StyleSheet.create({
     container: {
         position: 'relative',
         width: '100%',
-        aspectRatio: 1
+        maxWidth: moderateScale({ size: 320 }),
+        height: undefined,
+        aspectRatio: 1,
+        maxHeight: moderateScale({ size: 320 }),
     },
     cardStyle: {
         position: 'absolute'
     },
     answerContainer: {
         position: 'absolute',
-        top: 10,
+        top: verticalScale({ size: 10 }),
         zIndex: 1
     },
     answerText: {
         borderWidth: 1,
-        fontSize: 20,
+        fontSize: moderateScale({ size: 20 }),
         fontWeight: 'bold',
-        paddingTop: 5,
-        paddingBottom: 5,
-        paddingLeft: 10,
-        paddingRight: 10
+        paddingTop: moderateScale({ size: 5 }),
+        paddingBottom: moderateScale({ size: 5 }),
+        paddingLeft: moderateScale({ size: 10 }),
+        paddingRight: moderateScale({ size: 10 }),
     },
     falseAnswerText: {
         borderColor: THEME_COLORS.red,

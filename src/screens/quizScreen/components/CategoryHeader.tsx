@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Text, StyleSheet } from 'react-native';
 
 import { THEME_COLORS } from '../../../config/colors';
+import { moderateScale } from '../../../utils/scale';
 
 interface PropsType {
     category: string;
@@ -17,7 +18,7 @@ export const CategoryHeader = (props: PropsType) => {
 
 const styles = StyleSheet.create({
     header: {
-        fontSize: 22,
+        fontSize: moderateScale({ size: 24 }),
         fontWeight: 'bold',
         color: THEME_COLORS.headerTextColor,
         textAlign: 'center'
