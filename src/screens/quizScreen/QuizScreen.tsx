@@ -21,10 +21,6 @@ interface PropTypes {
 }
 
 export class QuizScreen extends React.Component<PropTypes> {
-    componentDidMount() {
-        this.props.fetchQuestions();
-    }
-
     render() {
         return (
             <>

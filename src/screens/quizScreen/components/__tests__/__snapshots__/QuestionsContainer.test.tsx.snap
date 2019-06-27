@@ -10,6 +10,7 @@ exports[`Quiz Screen QuestionsContainer Component matches to the snapshot 1`] = 
     }
   }
 >
+  <BooleanAnswersInstruction />
   <Text
     style={
       Array [

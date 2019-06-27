@@ -20,9 +20,6 @@ interface PropsType {
 }
 
 export class ResultsScreen extends React.Component<PropsType> {
-    componentDidMount() {
-        this.props.fetchQuestions();
-    }
     render() {
         return (
             <>

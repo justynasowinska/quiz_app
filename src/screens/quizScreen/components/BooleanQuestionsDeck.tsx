@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, PanResponder, Animated } from 'react-native';
+import { View, StyleSheet, PanResponder, Animated, Text } from 'react-native';
 
 import { QuizQuestionType, BooleanCorrectAnswerType } from '../../../redux/types';
 import { QuestionCard } from './QuestionCard';
 import { SWIPE_THRESHOLD, SWIPE_OUT_DURATION, ROTATE_CARD_DEG } from '../../../config/constants';
 import { SCREEN_WIDTH } from '../../../utils/metrics';
+import { THEME_COLORS } from '../../../config/colors';
 
 interface PropsType {
     questions: ReadonlyArray<QuizQuestionType>;
@@ -60,6 +61,8 @@ export const BooleanQuestionsDeck = (props: PropsType) => {
             style={[getAnimatedCardStyle(), styles.cardStyle]}
             {...panResponder.panHandlers}
         >
+            {renderAnimatedAnswer('False')}
+            {renderAnimatedAnswer('True')}
             <QuestionCard
                 question={question}
             />
@@ -89,6 +92,36 @@ export const BooleanQuestionsDeck = (props: PropsType) => {
                 rotate
             }]
         };
+    };
+
+    const getAnimatedTrueAnswersOpacity = () => {
+        return position.x.interpolate({
+            inputRange: [-SWIPE_THRESHOLD, 0, SWIPE_THRESHOLD],
+            outputRange: [0, 0, 1]
+        });
+    };
+
+    const getAnimatedFalseAnswersOpacity = () => {
+        return position.x.interpolate({
+            inputRange: [-SWIPE_THRESHOLD, 0, SWIPE_THRESHOLD],
+            outputRange: [1, 0, 0]
+        });
+    };
+
+    const renderAnimatedAnswer = (answer: BooleanCorrectAnswerType) => {
+        if (answer === 'True') {
+            return (
+                <Animated.View style={[styles.answerContainer, { left: 10, opacity: getAnimatedTrueAnswersOpacity() }]}>
+                    <Text style={[styles.answerText, styles.trueAnswerText]}>TRUE</Text>
+                </Animated.View>
+            );
+        }
+
+        return (
+            <Animated.View style={[styles.answerContainer, { right: 10, opacity: getAnimatedFalseAnswersOpacity() }]}>
+                <Text style={[styles.answerText, styles.falseAnswerText]}>FALSE</Text>
+            </Animated.View>
+        );
     };
 
     /**
@@ -132,5 +165,27 @@ const styles = StyleSheet.create({
     },
     cardStyle: {
         position: 'absolute'
+    },
+    answerContainer: {
+        position: 'absolute',
+        top: 10,
+        zIndex: 1
+    },
+    answerText: {
+        borderWidth: 1,
+        fontSize: 20,
+        fontWeight: 'bold',
+        paddingTop: 5,
+        paddingBottom: 5,
+        paddingLeft: 10,
+        paddingRight: 10
+    },
+    falseAnswerText: {
+        borderColor: THEME_COLORS.red,
+        color: THEME_COLORS.red
+    },
+    trueAnswerText: {
+        borderColor: THEME_COLORS.green,
+        color: THEME_COLORS.green
     }
 });

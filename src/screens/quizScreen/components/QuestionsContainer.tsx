@@ -4,6 +4,7 @@ import { Text, StyleSheet, View } from 'react-native';
 import { BooleanQuestionsDeck } from './BooleanQuestionsDeck';
 import { QuizQuestionType, BooleanCorrectAnswerType } from '../../../redux/types';
 import { getDifficultyLevelColor } from '../../../utils/helpers';
+import { BooleanAnswersInstruction } from './BooleanAnswersInstruction';
 
 interface PropsType {
     questions: ReadonlyArray<QuizQuestionType>;
@@ -25,6 +26,7 @@ export const QuestionsContainer = (props: PropsType) => {
     // TODO: Render other questions deck if not boolean questions type
     return (
         <View style={styles.container}>
+            <BooleanAnswersInstruction />
             <Text style={[styles.levelText, { color: difficultyColor }]}>
                 Level: {difficulty}
             </Text>

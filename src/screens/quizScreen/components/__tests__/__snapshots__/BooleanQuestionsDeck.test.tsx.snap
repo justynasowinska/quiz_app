@@ -41,6 +41,80 @@ exports[`Quiz Screen BooleanQuestionsDeck Component matches to the snapshot 1`] 
       ]
     }
   >
+    <AnimatedComponent
+      style={
+        Array [
+          Object {
+            "position": "absolute",
+            "top": 10,
+            "zIndex": 1,
+          },
+          Object {
+            "opacity": 0,
+            "right": 10,
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "borderWidth": 1,
+              "fontSize": 20,
+              "fontWeight": "bold",
+              "paddingBottom": 5,
+              "paddingLeft": 10,
+              "paddingRight": 10,
+              "paddingTop": 5,
+            },
+            Object {
+              "borderColor": "#CD0720",
+              "color": "#CD0720",
+            },
+          ]
+        }
+      >
+        FALSE
+      </Text>
+    </AnimatedComponent>
+    <AnimatedComponent
+      style={
+        Array [
+          Object {
+            "position": "absolute",
+            "top": 10,
+            "zIndex": 1,
+          },
+          Object {
+            "left": 10,
+            "opacity": 0,
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "borderWidth": 1,
+              "fontSize": 20,
+              "fontWeight": "bold",
+              "paddingBottom": 5,
+              "paddingLeft": 10,
+              "paddingRight": 10,
+              "paddingTop": 5,
+            },
+            Object {
+              "borderColor": "#2FA83E",
+              "color": "#2FA83E",
+            },
+          ]
+        }
+      >
+        TRUE
+      </Text>
+    </AnimatedComponent>
     <QuestionCard
       question={
         Object {
