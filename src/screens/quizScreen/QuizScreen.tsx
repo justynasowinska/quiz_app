@@ -1,18 +1,22 @@
 import * as React from 'react';
 import { View, StyleSheet, StatusBar, SafeAreaView, Text } from 'react-native';
 import { connect } from 'react-redux';
+import { NavigationScreenProp } from 'react-navigation';
 
-// import { THEME_COLORS } from '../../config/colors';
 import { CategoryHeader } from './components/CategoryHeader';
-import { QuestionCard } from './components/QuestionCard';
 import { AppStateType } from '../../redux/reducers/appStateType';
-import { QuizQuestionsStateType, QuizProgressType } from '../../redux/types';
-import { fetchQuestions } from '../../redux/actions';
+import { QuizQuestionsStateType, QuizProgressType, BooleanCorrectAnswerType } from '../../redux/types';
+import { fetchQuestions, addUserAnswer, getNewQuestion, resetProgress } from '../../redux/actions';
+import { QuestionsDeck } from './components/QuestionsDeck';
 
 interface PropTypes {
+    navigation: NavigationScreenProp<any, any>;
     questions: QuizQuestionsStateType;
     progress: QuizProgressType;
     fetchQuestions: () => void;
+    addUserAnswer: (questionId: number, answer: BooleanCorrectAnswerType) => void;
+    getNewQuestion: (currentQuestionIndex: number) => void;
+    resetProgress: () => void;
 }
 
 export class QuizScreen extends React.Component<PropTypes> {
@@ -52,16 +56,31 @@ export class QuizScreen extends React.Component<PropTypes> {
     }
 
     renderQuestions() {
+        const { questions: { questions }, progress: { currentQuestion } } = this.props;
         return (
             <>
                 <CategoryHeader
-                    category={this.props.questions.questions[0].category}
+                    category={questions[currentQuestion].category}
                 />
-                <QuestionCard
-                    question={this.props.questions.questions[0]}
+                <QuestionsDeck
+                    questions={questions}
+                    currentQuestionIndex={currentQuestion}
+                    onUserAnswer={this.onUserAnswerHandle}
                 />
             </>
         );
+    }
+
+    onUserAnswerHandle = (questionIndex: number, answer: BooleanCorrectAnswerType) => {
+        const { addUserAnswer, getNewQuestion, resetProgress, questions, navigation } = this.props;
+        addUserAnswer(questionIndex, answer);
+
+        if (questions.questions.length - 1 === questionIndex) {
+            navigation.navigate('ResultsScreen');
+            resetProgress();
+        } else {
+            getNewQuestion(questionIndex);
+        }
     }
 }
 
@@ -70,7 +89,7 @@ const mapStateToProps = (state: AppStateType) => ({
     progress: state.progress
 });
 
-export const QuizScreenConnected = connect(mapStateToProps, { fetchQuestions })(QuizScreen);
+export const QuizScreenConnected = connect(mapStateToProps, { fetchQuestions, addUserAnswer, getNewQuestion, resetProgress })(QuizScreen);
 
 const styles = StyleSheet.create({
     container: {

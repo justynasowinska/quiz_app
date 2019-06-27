@@ -13,7 +13,7 @@ export interface QuizQuestionType {
 }
 
 export interface QuizQuestionsStateType {
-    questions: Array<QuizQuestionType>;
+    questions: ReadonlyArray<QuizQuestionType>;
     loading: boolean;
     error: Error | null;
 }

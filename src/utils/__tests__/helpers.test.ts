@@ -1,4 +1,5 @@
-import { decodeWithEntities } from '../helpers';
+import { decodeWithEntities, getDifficultyLevelColor } from '../helpers';
+import { THEME_COLORS } from '../../config/colors';
 
 describe('decodeWithEntities method', () => {
     it('returns proper string when found correct entities', () => {
@@ -18,5 +19,13 @@ describe('decodeWithEntities method', () => {
         const expectedResult = 'In the game &qdfauot;Melty Blood Actress Again Current Code&qdfauot;, you can enter Blood Heat mode in Half Moon style.';
 
         expect(decodeWithEntities(text)).toBe(expectedResult);
+    });
+});
+
+describe('getDifficultyLevelColor method', () => {
+    it('returns proper data for different difficulty levels', () => {
+        expect(getDifficultyLevelColor('easy')).toBe(THEME_COLORS.easyQuestionLevel);
+        expect(getDifficultyLevelColor('medium')).toBe(THEME_COLORS.mediumQuestionLevel);
+        expect(getDifficultyLevelColor('hard')).toBe(THEME_COLORS.hardQuestionLevel);
     });
 });

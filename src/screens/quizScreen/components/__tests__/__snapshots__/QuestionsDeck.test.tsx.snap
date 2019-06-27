@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quiz Screen QuestionsDeck Component matches to the snapshot 1`] = `
+<Fragment>
+  <Text
+    style={
+      Array [
+        Object {
+          "alignSelf": "flex-start",
+          "fontSize": 15,
+          "marginBottom": 2,
+        },
+        Object {
+          "color": "#CD0720",
+        },
+      ]
+    }
+  >
+    Level: 
+    hard
+  </Text>
+  <BooleanQuestionsDeck
+    currentQuestionIndex={0}
+    onUserAnswer={[MockFunction]}
+    questions={
+      Array [
+        Object {
+          "category": "Entertainment: Video Games",
+          "correct_answer": "True",
+          "difficulty": "hard",
+          "incorrect_answers": Array [
+            "False",
+          ],
+          "question": "Unturned originally started as a Roblox game.",
+          "type": "boolean",
+        },
+      ]
+    }
+  />
+  <Text
+    style={
+      Object {
+        "fontSize": 15,
+        "marginTop": 2,
+      }
+    }
+  >
+    0 / 1
+  </Text>
+</Fragment>
+`;

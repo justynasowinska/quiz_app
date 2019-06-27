@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quiz Screen QuestionCard Component matches to the snapshot 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "aspectRatio": 1,
+        "backgroundColor": "#fff",
+        "borderWidth": 1,
+        "justifyContent": "center",
+        "padding": 20,
+        "width": "100%",
+      },
+      Object {
+        "borderColor": "#CD0720",
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#474D54",
+        "fontSize": 20,
+        "textAlign": "center",
+      }
+    }
+  >
+    Unturned originally started as a Roblox game.
+  </Text>
+</View>
+`;

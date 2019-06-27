@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quiz Screen BooleanQuestionsDeck Component matches to the snapshot 1`] = `
+<View
+  style={
+    Object {
+      "aspectRatio": 1,
+      "position": "relative",
+      "width": "100%",
+    }
+  }
+>
+  <AnimatedComponent
+    key="Unturned originally started as a Roblox game."
+    onMoveShouldSetResponder={[Function]}
+    onMoveShouldSetResponderCapture={[Function]}
+    onResponderEnd={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderReject={[Function]}
+    onResponderRelease={[Function]}
+    onResponderStart={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    onStartShouldSetResponderCapture={[Function]}
+    style={
+      Array [
+        Object {
+          "left": 0,
+          "top": 0,
+          "transform": Array [
+            Object {
+              "rotate": "0deg",
+            },
+          ],
+        },
+        Object {
+          "position": "absolute",
+        },
+      ]
+    }
+  >
+    <QuestionCard
+      question={
+        Object {
+          "category": "Entertainment: Video Games",
+          "correct_answer": "True",
+          "difficulty": "hard",
+          "incorrect_answers": Array [
+            "False",
+          ],
+          "question": "Unturned originally started as a Roblox game.",
+          "type": "boolean",
+        }
+      }
+    />
+  </AnimatedComponent>
+</View>
+`;
