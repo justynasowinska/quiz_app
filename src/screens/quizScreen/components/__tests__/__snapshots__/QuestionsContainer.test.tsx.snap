@@ -1,7 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Quiz Screen QuestionsDeck Component matches to the snapshot 1`] = `
-<Fragment>
+exports[`Quiz Screen QuestionsContainer Component matches to the snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
   <Text
     style={
       Array [
@@ -47,5 +55,5 @@ exports[`Quiz Screen QuestionsDeck Component matches to the snapshot 1`] = `
   >
     0 / 1
   </Text>
-</Fragment>
+</View>
 `;

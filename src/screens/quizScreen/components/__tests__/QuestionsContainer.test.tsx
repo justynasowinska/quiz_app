@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import { QuestionsDeck } from '../QuestionsDeck';
+import { QuestionsContainer } from '../QuestionsContainer';
 import { QuizQuestionType } from '../../../../redux/types';
 
-describe('Quiz Screen QuestionsDeck Component', () => {
+describe('Quiz Screen QuestionsContainer Component', () => {
     it('matches to the snapshot', () => {
         const questions: ReadonlyArray<QuizQuestionType> = [{
             category: 'Entertainment: Video Games',
@@ -16,7 +16,7 @@ describe('Quiz Screen QuestionsDeck Component', () => {
         }];
 
         const component = shallow(
-            <QuestionsDeck
+            <QuestionsContainer
                 questions={questions}
                 currentQuestionIndex={0}
                 onUserAnswer={jest.fn()}

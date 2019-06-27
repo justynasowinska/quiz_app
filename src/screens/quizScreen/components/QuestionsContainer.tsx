@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, StyleSheet } from 'react-native';
+import { Text, StyleSheet, View } from 'react-native';
 
 import { BooleanQuestionsDeck } from './BooleanQuestionsDeck';
 import { QuizQuestionType, BooleanCorrectAnswerType } from '../../../redux/types';
@@ -11,7 +11,7 @@ interface PropsType {
     onUserAnswer: (questionIndex: number, answer: BooleanCorrectAnswerType) => void;
 }
 
-export const QuestionsDeck = (props: PropsType) => {
+export const QuestionsContainer = (props: PropsType) => {
     const { questions, currentQuestionIndex, onUserAnswer } = props;
     const difficulty = questions[currentQuestionIndex].difficulty;
     const difficultyColor = getDifficultyLevelColor(difficulty);
@@ -24,7 +24,7 @@ export const QuestionsDeck = (props: PropsType) => {
 
     // TODO: Render other questions deck if not boolean questions type
     return (
-        <>
+        <View style={styles.container}>
             <Text style={[styles.levelText, { color: difficultyColor }]}>
                 Level: {difficulty}
             </Text>
@@ -36,11 +36,16 @@ export const QuestionsDeck = (props: PropsType) => {
             <Text style={styles.progressText}>
                 {getCurrentProgress()}
             </Text>
-        </>
+        </View>
     );
 };
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
     levelText: {
         fontSize: 15,
         marginBottom: 2,

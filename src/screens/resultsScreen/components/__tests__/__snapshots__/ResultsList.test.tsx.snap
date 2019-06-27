@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Results Screen ResultsListItem Component matches to the snapshot 1`] = `
+exports[`Results Screen ResultsList Component matches to the snapshot 1`] = `
 <View
   style={
     Object {
@@ -43,6 +43,7 @@ exports[`Results Screen ResultsListItem Component matches to the snapshot 1`] = 
     removeClippedSubviews={false}
     renderItem={[Function]}
     scrollEventThrottle={50}
+    showsVerticalScrollIndicator={false}
     updateCellsBatchingPeriod={50}
     windowSize={21}
   />

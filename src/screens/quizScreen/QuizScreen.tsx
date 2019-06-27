@@ -7,7 +7,7 @@ import { CategoryHeader } from './components/CategoryHeader';
 import { AppStateType } from '../../redux/reducers/appStateType';
 import { QuizQuestionsStateType, QuizProgressType, BooleanCorrectAnswerType } from '../../redux/types';
 import { fetchQuestions, addUserAnswer, getNewQuestion, resetProgress } from '../../redux/actions';
-import { QuestionsDeck } from './components/QuestionsDeck';
+import { QuestionsContainer } from './components/QuestionsContainer';
 import { QuizStatusBar } from '../../common/QuizStatusBar';
 
 interface PropTypes {
@@ -63,7 +63,7 @@ export class QuizScreen extends React.Component<PropTypes> {
                 <CategoryHeader
                     category={questions[currentQuestion].category}
                 />
-                <QuestionsDeck
+                <QuestionsContainer
                     questions={questions}
                     currentQuestionIndex={currentQuestion}
                     onUserAnswer={this.onUserAnswerHandle}
@@ -103,5 +103,5 @@ const styles = StyleSheet.create({
         paddingBottom: 30,
         paddingLeft: 40,
         paddingRight: 40,
-    },
+    }
 });
