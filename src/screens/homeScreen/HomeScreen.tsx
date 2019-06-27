@@ -11,6 +11,7 @@ import { QuizStatusBar } from '../../common/QuizStatusBar';
 import { PrimaryButton } from '../../common/PrimaryButton';
 import { AppStateType } from '../../redux/reducers/appStateType';
 import { QuizQuestionsStateType } from '../../redux/types';
+import { LoadingOverlay } from '../../common/LoadingOverlay';
 
 interface PropTypes {
     navigation: NavigationScreenProp<any, any>;
@@ -48,7 +49,7 @@ export class HomeScreen extends React.Component<PropTypes> {
         const { questions } = this.props;
 
         if (questions.loading) {
-            return <Text>Loading...</Text>;
+            return <LoadingOverlay backgroundColor={THEME_COLORS.white} />;
         }
 
         if (questions.error !== null) {
