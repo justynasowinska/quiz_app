@@ -24,3 +24,5 @@ if (__DEV__) {
 
 export const store = createStore(persistedReducer, applyMiddleware(...middlewares));
 export const persistor = persistStore(store);
+// delete it after tests
+// persistor.purge();

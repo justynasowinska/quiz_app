@@ -10,40 +10,75 @@ import { fetchQuestions } from '../../redux/actions';
 import { QuizStatusBar } from '../../common/QuizStatusBar';
 import { PrimaryButton } from '../../common/PrimaryButton';
 import { AppStateType } from '../../redux/reducers/appStateType';
-import { QuestionType } from '../../redux/types';
+import { QuizQuestionsStateType } from '../../redux/types';
 
 interface PropTypes {
     navigation: NavigationScreenProp<any, any>;
-    questionsNumber: number;
-    questionsType: QuestionType;
+    questions: QuizQuestionsStateType;
+    currentIndex: number;
     fetchQuestions: () => void;
 }
 
 export class HomeScreen extends React.Component<PropTypes> {
     componentDidMount() {
-        this.props.fetchQuestions();
+        const { currentIndex, fetchQuestions, navigation } = this.props;
+
+        // This functionality should be discussed
+        if (currentIndex > 0) {
+            navigation.navigate('QuizScreen');
+        } else {
+            fetchQuestions();
+        }
     }
 
     render() {
-        const { questionsNumber, questionsType } = this.props;
-
         return (
             <>
                 <QuizStatusBar />
                 <SafeAreaView style={styles.container}>
                     <View style={styles.contentContainer}>
-                        <Header />
-                        <QuizInfo
-                            questionsNumber={questionsNumber}
-                            questionsType={questionsType}
-                        />
-                        <Text style={styles.info}>Can you score 100%?</Text>
-                        <PrimaryButton
-                            title="Begin"
-                            onPress={this.onPressBeginButtonHandle}
-                        />
+                        {this.renderContent()}
                     </View>
                 </SafeAreaView>
+            </>
+        );
+    }
+
+    renderContent() {
+        const { questions } = this.props;
+
+        if (questions.loading) {
+            return <Text>Loading...</Text>;
+        }
+
+        if (questions.error !== null) {
+            return <Text>Error during fetching questions.</Text>;
+        }
+
+        if (questions.questions.length === 0) {
+            return <Text>There is no available questions for these criteria.</Text>;
+        }
+
+        return this.renderIntro();
+    }
+
+    renderIntro = () => {
+        const { questions: { questions } } = this.props;
+        const questionsNumber = questions.length;
+        const qurstionsType = questions[0].type;
+
+        return (
+            <>
+                <Header />
+                <QuizInfo
+                    questionsNumber={questionsNumber}
+                    questionsType={qurstionsType}
+                />
+                <Text style={styles.info}>Can you score 100%?</Text>
+                <PrimaryButton
+                    title="Begin"
+                    onPress={this.onPressBeginButtonHandle}
+                />
             </>
         );
     }
@@ -54,11 +89,10 @@ export class HomeScreen extends React.Component<PropTypes> {
 }
 
 const mapStateToProps = (state: AppStateType) => ({
-    questionsNumber: state.questions.questions.length,
-    questionsType: state.questions.questions[0].type // temporary solution
+    questions: state.questions,
+    currentIndex: state.progress.currentQuestion
 });
 
-// TODO: get data about questions number and type from redux
 export const HomeScreenConnected = connect(mapStateToProps, { fetchQuestions })(HomeScreen);
 
 const styles = StyleSheet.create({
@@ -71,8 +105,8 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         paddingTop: 30,
         paddingBottom: 30,
-        paddingLeft: 70,
-        paddingRight: 70,
+        paddingLeft: 40,
+        paddingRight: 40,
     },
     info: {
         fontSize: 18,

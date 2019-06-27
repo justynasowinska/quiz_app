@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, StyleSheet, SafeAreaView, Text } from 'react-native';
+import { View, StyleSheet, SafeAreaView } from 'react-native';
 import { connect } from 'react-redux';
 import { NavigationScreenProp } from 'react-navigation';
 
@@ -27,33 +27,18 @@ export class QuizScreen extends React.Component<PropTypes> {
                 <QuizStatusBar />
                 <SafeAreaView style={styles.container}>
                     <View style={styles.contentContainer}>
-                        {this.renderContent()}
+                        {this.renderQuestions()}
                     </View>
                 </SafeAreaView>
             </>
         );
     }
 
-    renderContent() {
-        const { questions } = this.props;
-
-        if (questions.loading) {
-            return <Text>Loading...</Text>;
-        }
-
-        if (questions.error !== null) {
-            return <Text>Error occured</Text>;
-        }
-
-        if (questions.questions.length === 0) {
-            return <Text>There is no available questions for these criteria.</Text>;
-        }
-
-        return this.renderQuestions();
-    }
-
     renderQuestions() {
         const { questions: { questions }, progress: { currentQuestion } } = this.props;
+
+        if (questions.length === 0) return null;
+
         return (
             <>
                 <CategoryHeader
