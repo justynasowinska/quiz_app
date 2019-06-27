@@ -96,9 +96,6 @@ const styles = StyleSheet.create({
     contentContainer: {
         flex: 1,
         alignItems: 'center',
-        paddingTop: 30,
-        paddingBottom: 30,
-        paddingLeft: 40,
-        paddingRight: 40,
+        padding: 30
     }
 });

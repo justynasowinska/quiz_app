@@ -59,10 +59,11 @@ const styles = StyleSheet.create({
     },
     textContainer: {
         flexDirection: 'column',
+        flexShrink: 1,
     },
     questionText: {
         fontSize: 20,
-        color: THEME_COLORS.appTextColor,
+        color: THEME_COLORS.appTextColor
     },
     correctAnswer: {
         fontSize: 15,
