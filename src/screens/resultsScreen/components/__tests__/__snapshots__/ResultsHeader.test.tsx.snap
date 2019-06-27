@@ -6,7 +6,7 @@ exports[`Results Screen ResultsHeader Component matches to the snapshot 1`] = `
     style={
       Object {
         "color": "#0C9198",
-        "fontSize": 22,
+        "fontSize": 36,
         "fontWeight": "bold",
         "textAlign": "center",
       }
@@ -19,12 +19,12 @@ exports[`Results Screen ResultsHeader Component matches to the snapshot 1`] = `
       Array [
         Object {
           "color": "#0C9198",
-          "fontSize": 22,
+          "fontSize": 36,
           "fontWeight": "bold",
           "textAlign": "center",
         },
         Object {
-          "fontSize": 24,
+          "fontSize": 39,
         },
       ]
     }

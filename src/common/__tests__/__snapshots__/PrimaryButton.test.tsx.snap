@@ -4,13 +4,18 @@ exports[`PrimaryButton Component matches to the snapshot 1`] = `
 <ForwardRef(Themed.Button)
   buttonStyle={
     Object {
-      "paddingBottom": 10,
-      "paddingLeft": 20,
-      "paddingRight": 20,
-      "paddingTop": 10,
+      "paddingBottom": 22.5,
+      "paddingLeft": 45,
+      "paddingRight": 45,
+      "paddingTop": 22.5,
     }
   }
   onPress={[MockFunction]}
   title="SOME TITLE"
+  titleStyle={
+    Object {
+      "fontSize": 30,
+    }
+  }
 />
 `;

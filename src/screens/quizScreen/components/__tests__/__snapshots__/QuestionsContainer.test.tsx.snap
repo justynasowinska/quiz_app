@@ -16,8 +16,8 @@ exports[`Quiz Screen QuestionsContainer Component matches to the snapshot 1`] = 
       Array [
         Object {
           "alignSelf": "flex-start",
-          "fontSize": 15,
-          "marginBottom": 2,
+          "fontSize": 27,
+          "marginBottom": 6,
         },
         Object {
           "color": "#CD0720",
@@ -49,8 +49,8 @@ exports[`Quiz Screen QuestionsContainer Component matches to the snapshot 1`] = 
   <Text
     style={
       Object {
-        "fontSize": 15,
-        "marginTop": 2,
+        "fontSize": 27,
+        "marginTop": 6,
       }
     }
   >

@@ -10,7 +10,7 @@ exports[`Quiz Screen QuestionCard Component matches to the snapshot 1`] = `
         "backgroundColor": "#fff",
         "borderWidth": 1,
         "justifyContent": "center",
-        "padding": 20,
+        "padding": 34.5,
         "width": "100%",
       },
       Object {
@@ -23,7 +23,7 @@ exports[`Quiz Screen QuestionCard Component matches to the snapshot 1`] = `
     style={
       Object {
         "color": "#474D54",
-        "fontSize": 20,
+        "fontSize": 34.5,
         "textAlign": "center",
       }
     }

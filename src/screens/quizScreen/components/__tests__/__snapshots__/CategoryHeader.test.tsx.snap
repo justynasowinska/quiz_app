@@ -5,7 +5,7 @@ exports[`Quiz Screen CategoryHeader Component matches to the snapshot 1`] = `
   style={
     Object {
       "color": "#0C9198",
-      "fontSize": 22,
+      "fontSize": 36,
       "fontWeight": "bold",
       "textAlign": "center",
     }

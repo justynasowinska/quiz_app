@@ -5,7 +5,7 @@ exports[`Home Screen Quiz Info Component matches to the snapshots 1`] = `
   style={
     Object {
       "color": "#474D54",
-      "fontSize": 18,
+      "fontSize": 37.5,
       "textAlign": "center",
     }
   }
@@ -20,7 +20,7 @@ exports[`Home Screen Quiz Info Component matches to the snapshots 2`] = `
   style={
     Object {
       "color": "#474D54",
-      "fontSize": 18,
+      "fontSize": 37.5,
       "textAlign": "center",
     }
   }

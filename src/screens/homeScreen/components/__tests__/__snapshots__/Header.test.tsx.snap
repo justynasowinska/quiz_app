@@ -5,7 +5,7 @@ exports[`Home Screen Header Component matches to the snapshot 1`] = `
   style={
     Object {
       "color": "#0C9198",
-      "fontSize": 26,
+      "fontSize": 48,
       "fontWeight": "bold",
       "textAlign": "center",
     }

@@ -6,8 +6,8 @@ exports[`Quiz Screen BooleanAnswersInstruction Component matches to the snapshot
     Object {
       "alignItems": "center",
       "flexDirection": "row",
-      "marginBottom": 40,
-      "marginTop": -40,
+      "marginBottom": 50,
+      "marginTop": -50,
     }
   }
 >
@@ -15,7 +15,7 @@ exports[`Quiz Screen BooleanAnswersInstruction Component matches to the snapshot
     style={
       Object {
         "color": "#474D54",
-        "fontSize": 20,
+        "fontSize": 30,
         "fontWeight": "bold",
       }
     }
@@ -25,40 +25,40 @@ exports[`Quiz Screen BooleanAnswersInstruction Component matches to the snapshot
   <Themed.Icon
     iconStyle={
       Object {
-        "marginLeft": 15,
+        "marginLeft": 22.5,
       }
     }
     name="arrow-long-left"
-    size={20}
+    size={30}
     type="entypo"
   />
   <Themed.Icon
     color="#474D54"
     iconStyle={
       Object {
-        "marginLeft": 15,
-        "marginRight": 15,
+        "marginLeft": 22.5,
+        "marginRight": 22.5,
       }
     }
     name="gesture-swipe-horizontal"
-    size={40}
+    size={60}
     type="material-community"
   />
   <Themed.Icon
     iconStyle={
       Object {
-        "marginRight": 15,
+        "marginRight": 22.5,
       }
     }
     name="arrow-long-right"
-    size={20}
+    size={30}
     type="entypo"
   />
   <Text
     style={
       Object {
         "color": "#474D54",
-        "fontSize": 20,
+        "fontSize": 30,
         "fontWeight": "bold",
       }
     }
