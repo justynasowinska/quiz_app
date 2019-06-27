@@ -27,6 +27,7 @@ export const ResultsList = (props: PropsType) => {
                 data={results}
                 renderItem={renderListItem}
                 keyExtractor={keyExtractor}
+                showsVerticalScrollIndicator={false}
             />
         </View>
     );
