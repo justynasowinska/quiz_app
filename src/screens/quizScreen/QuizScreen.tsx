@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, StyleSheet, StatusBar, SafeAreaView, Text } from 'react-native';
+import { View, StyleSheet, SafeAreaView, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { NavigationScreenProp } from 'react-navigation';
 
@@ -8,6 +8,7 @@ import { AppStateType } from '../../redux/reducers/appStateType';
 import { QuizQuestionsStateType, QuizProgressType, BooleanCorrectAnswerType } from '../../redux/types';
 import { fetchQuestions, addUserAnswer, getNewQuestion, resetProgress } from '../../redux/actions';
 import { QuestionsDeck } from './components/QuestionsDeck';
+import { QuizStatusBar } from '../../common/QuizStatusBar';
 
 interface PropTypes {
     navigation: NavigationScreenProp<any, any>;
@@ -27,7 +28,7 @@ export class QuizScreen extends React.Component<PropTypes> {
     render() {
         return (
             <>
-                <StatusBar barStyle="dark-content" animated={true} />
+                <QuizStatusBar />
                 <SafeAreaView style={styles.container}>
                     <View style={styles.contentContainer}>
                         {this.renderContent()}

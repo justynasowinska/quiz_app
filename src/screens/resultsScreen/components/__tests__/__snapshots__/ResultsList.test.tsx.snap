@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results Screen ResultsListItem Component matches to the snapshot 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "marginBottom": 20,
+      "marginTop": 20,
+    }
+  }
+>
+  <FlatList
+    data={
+      Array [
+        Object {
+          "correct": true,
+          "correctAnswer": "True",
+          "question": "Unturned originally started as a Roblox game.",
+          "questionId": 0,
+        },
+        Object {
+          "correct": false,
+          "correctAnswer": "False",
+          "question": "Unturned originally started as a Roblox game.",
+          "questionId": 1,
+        },
+        Object {
+          "correct": true,
+          "correctAnswer": "False",
+          "question": "Unturned originally started as a Roblox game.",
+          "questionId": 3,
+        },
+      ]
+    }
+    disableVirtualization={false}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    numColumns={1}
+    onEndReachedThreshold={2}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    updateCellsBatchingPeriod={50}
+    windowSize={21}
+  />
+</View>
+`;

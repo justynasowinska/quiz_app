@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results Screen ResultsListItem Component matches to the snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "marginBottom": 10,
+      "marginTop": 10,
+    }
+  }
+>
+  <Themed.Icon
+    color="#2FA83E"
+    iconStyle={
+      Object {
+        "marginRight": 10,
+      }
+    }
+    name="check"
+  />
+  <View
+    style={
+      Object {
+        "flexDirection": "column",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#474D54",
+          "fontSize": 20,
+        }
+      }
+    >
+      Unturned originally started as a Roblox game.
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Results Screen ResultsListItem Component matches to the snapshot 2`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "marginBottom": 10,
+      "marginTop": 10,
+    }
+  }
+>
+  <Themed.Icon
+    color="#CD0720"
+    iconStyle={
+      Object {
+        "marginRight": 10,
+      }
+    }
+    name="close"
+  />
+  <View
+    style={
+      Object {
+        "flexDirection": "column",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#474D54",
+          "fontSize": 20,
+        }
+      }
+    >
+      Unturned originally started as a Roblox game.
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "#2FA83E",
+          "fontSize": 15,
+        }
+      }
+      testID="results_correct_answer"
+    >
+      Correct answer: True
+    </Text>
+  </View>
+</View>
+`;

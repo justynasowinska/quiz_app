@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results Screen ResultsHeader Component matches to the snapshot 1`] = `
+<Fragment>
+  <Text
+    style={
+      Object {
+        "color": "#0C9198",
+        "fontSize": 22,
+        "fontWeight": "bold",
+        "textAlign": "center",
+      }
+    }
+  >
+    You scored
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#0C9198",
+          "fontSize": 22,
+          "fontWeight": "bold",
+          "textAlign": "center",
+        },
+        Object {
+          "fontSize": 24,
+        },
+      ]
+    }
+  >
+    20 / 23
+  </Text>
+</Fragment>
+`;

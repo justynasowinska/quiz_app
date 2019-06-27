@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, StyleSheet, Text, SafeAreaView, StatusBar, Button } from 'react-native';
+import { View, StyleSheet, Text, SafeAreaView } from 'react-native';
 import { connect } from 'react-redux';
 import { NavigationScreenProp } from 'react-navigation';
 
@@ -7,6 +7,8 @@ import { THEME_COLORS } from '../../config/colors';
 import { Header } from './components/Header';
 import { QuizInfo } from './components/QuizInfo';
 import { fetchQuestions } from '../../redux/actions';
+import { QuizStatusBar } from '../../common/QuizStatusBar';
+import { PrimaryButton } from '../../common/PrimaryButton';
 
 interface PropTypes {
     navigation: NavigationScreenProp<any, any>;
@@ -21,7 +23,7 @@ export class HomeScreen extends React.Component<PropTypes> {
     render() {
         return (
             <>
-                <StatusBar barStyle="dark-content" animated={true} />
+                <QuizStatusBar />
                 <SafeAreaView style={styles.container}>
                     <View style={styles.contentContainer}>
                         <Header />
@@ -30,7 +32,7 @@ export class HomeScreen extends React.Component<PropTypes> {
                             questionsType="boolean"
                         />
                         <Text style={styles.info}>Can you score 100%?</Text>
-                        <Button
+                        <PrimaryButton
                             title="Begin"
                             onPress={this.onPressBeginButtonHandle}
                         />

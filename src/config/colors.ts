@@ -16,8 +16,8 @@ const NAMED_COLORS = {
     orange: '#F53D00',
 
     // rest
-    yellow: '#2FA83E',
-    green: '#FBBA00',
+    green: '#2FA83E',
+    yellow: '#FBBA00',
     red: '#CD0720'
 };
 
