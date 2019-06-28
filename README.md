@@ -11,4 +11,3 @@ In case of some troubles with start project try open it in XCode and wait until 
 - yarn ios - runs app in ios simulator
 - yarn android - runs app in android simulator (previously you have to run it manually from Android Studio)
 - yarn test - runs tests
-- yarn prettier - runs prettier
