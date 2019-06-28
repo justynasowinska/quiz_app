@@ -27,21 +27,33 @@ export class ResultsScreen extends React.Component<PropsType> {
                 <QuizStatusBar />
                 <SafeAreaView style={styles.container}>
                     <View style={styles.contentContainer}>
-                        <ResultsHeader
-                            results={this.getResultsSummary()}
-                        />
                         <ResultsList
                             results={this.getResults()}
-                        />
-                        <PrimaryButton
-                            title="Play again?"
-                            onPress={this.onPressPlayAgainHandle}
+                            listHeader={this.renderListHeader()}
+                            listFooter={this.renderListFooter()}
                         />
                     </View>
                 </SafeAreaView>
             </>
         );
     }
+
+    renderListHeader = () => (
+        <View style={styles.listHeaderContainer}>
+            <ResultsHeader
+                results={this.getResultsSummary()}
+            />
+        </View>
+    )
+
+    renderListFooter = () => (
+        <View style={styles.listFooterContainer}>
+            <PrimaryButton
+                title="Play again?"
+                onPress={this.onPressPlayAgainHandle}
+            />
+        </View>
+    )
 
     // TODO: Move this logic to redux
     getResults = (): ResultsType => {
@@ -101,5 +113,12 @@ const styles = StyleSheet.create({
         paddingBottom: verticalScale({ size: 30 }),
         paddingLeft: moderateScale({ size: 30 }),
         paddingRight: moderateScale({ size: 30 }),
+    },
+    listHeaderContainer: {
+        marginBottom: verticalScale({ size: 20 }),
+    },
+    listFooterContainer: {
+        alignSelf: 'center',
+        marginTop: verticalScale({ size: 20 }),
     }
 });

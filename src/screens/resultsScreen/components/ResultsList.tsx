@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { FlatList, View, StyleSheet, ListRenderItemInfo } from 'react-native';
 import { ResultType, ResultsListItem } from './ResultsListItem';
-import { verticalScale } from '../../../utils/scale';
 
 export type ResultsType = ReadonlyArray<ResultType>;
 
 interface PropsType {
     results: ResultsType;
+    listHeader?: any;
+    listFooter?: any;
 }
 
 export const ResultsList = (props: PropsType) => {
@@ -29,6 +30,8 @@ export const ResultsList = (props: PropsType) => {
                 renderItem={renderListItem}
                 keyExtractor={keyExtractor}
                 showsVerticalScrollIndicator={false}
+                ListHeaderComponent={props.listHeader}
+                ListFooterComponent={props.listFooter}
             />
         </View>
     );
@@ -36,8 +39,6 @@ export const ResultsList = (props: PropsType) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        marginTop: verticalScale({ size: 20 }),
-        marginBottom: verticalScale({ size: 20 })
+        flex: 1
     }
 });

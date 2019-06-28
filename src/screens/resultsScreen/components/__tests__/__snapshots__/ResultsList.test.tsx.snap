@@ -5,8 +5,6 @@ exports[`Results Screen ResultsList Component matches to the snapshot 1`] = `
   style={
     Object {
       "flex": 1,
-      "marginBottom": 40,
-      "marginTop": 40,
     }
   }
 >
