@@ -23,12 +23,12 @@ interface PropTypes {
 
 export class HomeScreen extends React.Component<PropTypes> {
     componentDidMount() {
-        const { currentIndex, fetchQuestions, navigation } = this.props;
+        const { currentIndex, fetchQuestions, navigation, questions } = this.props;
 
         // This functionality should be discussed
         if (currentIndex > 0) {
             navigation.navigate('QuizScreen');
-        } else {
+        } else if (questions.questions.length === 0) {
             fetchQuestions();
         }
     }
