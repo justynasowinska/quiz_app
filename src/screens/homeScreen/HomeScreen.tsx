@@ -67,6 +67,7 @@ export class HomeScreen extends React.Component<PropTypes> {
     renderIntro = () => {
         const { questions: { questions } } = this.props;
         const questionsNumber = questions.length;
+        // TODO: This should be gain from some settings
         const qurstionsType = questions[0].type;
 
         return (
